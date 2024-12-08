@@ -1,4 +1,4 @@
-import TopCard from '@/components/TopCard'
+import TrendingCard from '@/app/Components/TrendingCard'
 interface products{
     image: string;
     title: string;
@@ -8,41 +8,41 @@ interface products{
 
 
 
-const TopCatorgry = () => {
+const Trending = () => {
   return (
-    <section className="max-w-[1177] flex flex-col gap-2 mx-auto px-4 lg:px-0 pt-[90px]">
+    <section className="max-w-[1177] flex flex-col gap-2 mx-auto px-4 pt-[70px]">
     {/* Heading */}
-    <h2 className="text-[32px] sm:text-[42px] font-bold text-center">Top Categories</h2>
+    <h2 className="text-[32px] sm:text-[42px] font-bold text-center">Trending Products</h2>
 
 
   
 
     {/* Products Grid */}
 
-    <div className="lg:max-w-[1177px] w-full mx-auto py-14 md:py-0">
+    <div className="lg:max-w-[1177px] w-full mx-auto py-14">
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-9 justify-items-center gap-y-[90px]">
-    <TopCard
+    <TrendingCard
       key="1"
-      image="./images/top1.svg"
+      image="./images/trend1.svg"
       title="Cantilever chair"
       price="$42.00"
     />
-    <TopCard
+    <TrendingCard
       key="2"
-      image="./images/top2.svg"
+      image="./images/trend2.svg"
       title="Cantilever chair"
       price="$42.00"
     />
-    <TopCard
+    <TrendingCard
       key="3"
-      image="./images/top3.svg"
+      image="./images/trend3.svg"
       title="Cantilever chair"
       price="$42.00"
     />
-      <TopCard
+      <TrendingCard
       key="3"
-      image="./images/top4.svg"
+      image="./images/trend4.svg"
       title="Cantilever chair"
       price="$42.00"
     />
@@ -60,4 +60,4 @@ const TopCatorgry = () => {
   )
 }
 
-export default TopCatorgry;
+export default Trending;

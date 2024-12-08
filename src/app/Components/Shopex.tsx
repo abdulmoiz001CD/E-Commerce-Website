@@ -1,5 +1,5 @@
 import React from 'react';
-import ShopexCard from '@/components/ShopexCard'
+import ShopexCard from '@/app/Components/ShopexCard'
 
 interface products{
     imageUrl: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import FeaturedCard from '@/components/FeaturedCard'
+import FeaturedCard from '@/app/Components/FeaturedCard'
 
 interface products{
     image: string;

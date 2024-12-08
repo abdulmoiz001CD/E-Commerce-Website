@@ -1,41 +1,16 @@
-import React from 'react'
-import LatestProductCard from '@/components/LatestProductCard'
-import Button1 from '@/components/Button'
+import React from 'react';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button"
-interface products{
-    image: string;
-    title: string;
-    description: string;
-     price:string;
-  }
+import Button from '@/app/Components/Button'
 
-
-
-const OffItem = () => {
+const UniqueFeature = () => {
   return (
-    <section className="max-w-[1177] w-full flex flex-col gap-5 text-[#151875] mx-auto px-4 md:px-0 pt-[70px]">
-    {/* Heading */}
-    <h2 className="text-[32px] sm:text-[42px] text-[#151875] font-bold text-center">Leatest Products</h2>
-
-
-   {/* Menu. */}
-   <div className="flex items-center gap-8 justify-center">
-      <div className="text-600 text-[12px] sm:text-[18px]">Wood Chair</div>
-      <div className="text-600 text-[12px] sm:text-[18px]">Plastic Chair</div>
-      <div className="text-600 text-[12px] sm:text-[18px]">Sofa Colletion</div>
-    </div>
-
-
-{/* HeroSection */}
-
-    <div className="w-full mx-auto px-4 md:pl-14 lg:pl-20 xl:pl-4 lg:px-0 sm:py-12">
-      <div className="flex flex-col max-w-[1177px] mx-auto md:flex-row-reverse md:justify-between gap-9 md:gap-6 sm:gap-8 lg:gap-12 items-center">
+    <section className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 xs:bg-white md:bg-[#F1F0FF]">
+      <div className="flex flex-col max-w-[1177px] mx-auto md:flex-row md:justify-between gap-9 md:gap-6 sm:gap-8 lg:gap-12 items-center">
         {/* Image div */}
         <div className="w-full md:w-1/2 lg:w-[509px]">
           <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[550px]">
             <Image
-              src="./images/sofa2.svg"
+              src="./images/sofa.svg"
               alt="Hero Image"
               fill
               className="object-cover rounded-lg"
@@ -47,9 +22,10 @@ const OffItem = () => {
         {/* Content div */}
         <div className="w-full md:w-1/2 pt-14 lg:w-[509px] space-y-4 sm:space-y-6">
           <h1 className="text-2xl sm:text-3xl lg:text-[35px] font-bold leading-tight">
-          20% Discount Of All Products
+            Unique Features Of leatest &
+            Trending Poducts
           </h1>
-          <Button className='text-[#FB2E86] text-[16px] shadow-none border-none bg-[#FFF6FB]'>Eams Sofa Compact</Button>
+          
           <div className="space-y-3 sm:space-y-4">
             <p className="flex items-baseline text-sm sm:text-base gap-2">
            
@@ -68,21 +44,17 @@ const OffItem = () => {
             </p>
           </div>
 
-          <div className="pt-4 ">
-            <Button1 text='Add To Cart' />
-           
+          <div className="flex gap-4 sm:gap-9 pt-4 items-center">
+            <Button text='Add To Cart' />
+            <div className='flex flex-col'>
+              <div className='text-xs sm:text-sm'>B&B Italian Sofa </div>
+              <div className='text-xs sm:text-sm font-medium'>$32.00</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  );
+};
 
-
-
-
-
- 
-  </section>
-  )
-}
-
-export default OffItem;
+export default UniqueFeature;

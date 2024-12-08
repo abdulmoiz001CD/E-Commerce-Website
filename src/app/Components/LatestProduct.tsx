@@ -1,5 +1,5 @@
 import React from 'react'
-import LatestProductCard from '@/components/LatestProductCard'
+import LatestProductCard from '@/app/Components/LatestProductCard'
 
 
 
