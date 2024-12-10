@@ -32,14 +32,14 @@ const Navbar = () => {
             <Link href="/" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/about" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
+            <Link href="/Pages" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
             Pages
             </Link>
-            <Link href="/contact" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
+            <Link href="/Products" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
             Product
             </Link>
 
-            <Link href="/contact" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
+            <Link href="/Blogs" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
           Blog
             </Link>
 
@@ -59,16 +59,18 @@ const Navbar = () => {
 </div>
 
         
+{/* search bar */}
 
-<div className="xs:hidden md:flex  md:max-w-[200px] xl:max-w-[317px] w-full md:h-[30px] xl:h-[40px] bg-red-500  items-center border border-black">
+<div className="xs:hidden md:flex md:max-w-[200px] xl:max-w-[317px] w-full md:h-[30px] xl:h-[40px] bg-red-500 items-center border border-gray-300  focus-within:bg-red-600 transition-colors duration-300">
   <input
     type="text"
     placeholder="Search..."
-    className="w-full h-full px-3 xl:pl-2 text-sm border-none  bg-white text-gray-800 placeholder-gray-400 focus:outline-none "
+    className="w-full h-full px-3 xl:pl-2 text-sm border-none bg-white text-gray-800 placeholder-gray-400 focus:outline-none"
   />
-  <CiSearch className="text-white md:text-[41px] xl:text-[51px] p-2"/>
+  <div className="flex items-center justify-center cursor-pointer">
+    <CiSearch className="text-white md:text-[36px] xl:text-[51px] p-2" />
+  </div>
 </div>
-
 
 
 
@@ -102,20 +104,23 @@ const Navbar = () => {
         </div>
       </div>
 
+
+      
+
       {/* Mobile Menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="flex flex-col pl-4 gap-4 px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <Link href="/" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/about" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
+            <Link href="/Pages" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
             Pages
             </Link>
-            <Link href="/contact" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
+            <Link href="/Products" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
             Product
             </Link>
 
-            <Link href="/contact" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
+            <Link href="/Blogs" className="md:text-[11px] xl:text-[16px] text-gray-600 hover:text-gray-900">
           Blog
             </Link>
 
