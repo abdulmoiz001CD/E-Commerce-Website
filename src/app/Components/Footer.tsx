@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="pt-[180px] bg-[#EEEFFB]">
       <div className="max-w-[1920px] w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1255px] mx-auto"> {/* Added max-width and center alignment */}
+        <div className="max-w-[1255px] mx-auto"> 
           <div className="grid grid-cols-2 md:grid-cols-12 items-center gap-16">
             {/* First Section - Hekto */}
             <div className="col-span-2 md:col-span-3 mb-[70px]">

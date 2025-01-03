@@ -1,6 +1,6 @@
 import React from 'react';
-import LatestProductCard from '@/app/Components/LatestProductCard';
-import  Button1  from "@/app/Components/Button";
+import LatestProductCard from '@/app/Home/Home_Comp/LatestProducts/LatestProductCard';
+import  Button1  from "@/app/Home/Home_Comp/Button";
 import Image from 'next/image';
 
 
