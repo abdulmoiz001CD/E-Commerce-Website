@@ -13,7 +13,7 @@ const UniqueFeature = () => {
               src="./images/sofa.svg"
               alt="Hero Image"
               fill
-              className="object-cover rounded-lg"
+              className="object-center rounded-lg"
               priority
             />
           </div>

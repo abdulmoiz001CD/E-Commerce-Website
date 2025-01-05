@@ -8,10 +8,12 @@ interface CardType{
   title:string,
   alt:string,
   btnText:string,
+  id:string
 }
 
 const cardsDataOne:CardType[] = [
   {
+  id:'2',
   image: "/images/off1.svg",
   title: "Bestseller Products",
   alt: 'Offer Image',
@@ -23,6 +25,7 @@ const cardsDataOne:CardType[] = [
 
 const cardsDataTwo:CardType[] = [
   {
+    id:'1',
   image: "/images/off2.svg",
   title: "20% Off On Latest Products",
   btnText:'Shop Now',
@@ -41,7 +44,7 @@ const Discount = () => {
         
 {cardsDataOne.map((value)=>{
       return(
-       <CardOne image={value.image} title={value.title}  alt ={value.alt} btnText={value.btnText}/>
+       <CardOne key={value.id} image={value.image} title={value.title}  alt ={value.alt} btnText={value.btnText}/>
       )
      })}
 
@@ -49,7 +52,7 @@ const Discount = () => {
 
 {cardsDataTwo.map((value)=>{
       return(
-       <CardTwo image={value.image} title={value.title}  alt ={value.alt} btnText={value.btnText}/>
+       <CardTwo key={value.id} image={value.image} title={value.title}  alt ={value.alt} btnText={value.btnText}/>
       )
      })}
 
