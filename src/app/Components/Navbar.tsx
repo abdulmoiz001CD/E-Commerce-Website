@@ -1,11 +1,12 @@
 "use client"
-import React, { useState } from 'react';
 import { FaRegEnvelope } from "react-icons/fa";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
+import Link from "next/link";
+
 
 const Navbar = () => {
 
@@ -60,9 +61,11 @@ const Navbar = () => {
             <FaRegHeart className='md:text-[12px] xl:text-[18px]  mb-[3px]'/>
            </div>
 
-
-           <FiShoppingCart className='md:text-[12px] xl:text-[18px] mb-[3px]' />
-
+           <Link href="/CartPage">
+           <FiShoppingCart className="md:text-[12px] xl:text-[18px] mb-[3px] cursor-pointer" />
+            </Link>
+           
+        
           </div>
 
         

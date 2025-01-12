@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/app/Components/Navbar";
 import Header from "@/app/Components/Header";
 import Footer from "@/app/Components/Footer";
+import { CartProvider } from 'use-shopping-cart';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,12 +30,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}> 
+<CartProvider
+  mode="payment" // Or "subscription" if you’re using subscriptions
+  cartMode="client-only"
+  stripe="your-stripe-public-key" // Replace with your actual Stripe public key
+  currency="USD"
+  successUrl="https://your-success-url.com" // Replace with your success page URL
+  cancelUrl="https://your-cancel-url.com"   // Replace with your cancel page URL
+  shouldPersist={true} // Optional: Keeps the cart data persistent across sessions
+>
         <Navbar/>
         <Header/>
         {children}
         <Footer/>
+        </CartProvider>
       </body>
     </html>
   );
