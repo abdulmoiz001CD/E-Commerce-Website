@@ -1,17 +1,35 @@
 'use client'
 import Image from "next/image";
 import { FiShoppingCart } from "react-icons/fi";
-
+import { useDispatch } from 'react-redux';  // Use regular useDispatch for now
+import { addtoCart } from '@/app/Shop/Redux/CartSlice';
 
 interface ProductCardProps {
   image: string;
   title: string;
   description: string;
   price: string | number;
+  id:string;
 
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price,}) => {
+const ProductCard: React.FC<ProductCardProps> = ({id,image, title, description, price,}) => {
+ 
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+      const item = {
+          id,
+          title,
+          description,
+          image,
+          price
+      };
+      console.log('Dispatching item:', item); // Debug log
+      dispatch(addtoCart(item));
+  };
+   
+ 
   return (
     <div className="group relative flex flex-col w-[270px] bg-[#F6F7FB] rounded-lg shadow-lg border border-white overflow-hidden items-center justify-center text-center transition-transform hover:scale-105">
       {/* Image Section */}
@@ -20,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, pr
       </div>
 
       {/* Hover Cart Icon */}
-      <FiShoppingCart
+      <FiShoppingCart onClick={handleAddToCart}
         className="absolute top-4 right-4 text-2xl hover:text-[#ce8346] hidden group-hover:block transition-opacity duration-300"
       />
 

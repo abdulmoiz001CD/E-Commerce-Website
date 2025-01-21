@@ -6,10 +6,13 @@ import { FaRegHeart } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
 import Link from "next/link";
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/Shop/Redux/Store';
 
 
 const Navbar = () => {
-
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  console.log('Cart Items:', cartItems); // Debug log
   return (
     <nav className="bg-[#7E33E0] text-white shadow-lg xs:hidden md:block md:px-[17px] sticky top-0 backdrop-blur z-10">
       <div className="max-w-[1177px] w-full mx-auto sm:px-[20px]">
@@ -30,7 +33,7 @@ const Navbar = () => {
           <div className='md:text-[12px] xl:text-[16px] font-[600]'>(12345)67890</div>
           </div>
 
-
+         
           </div>
 
           {/* Desktop Menu */}
@@ -61,10 +64,18 @@ const Navbar = () => {
             <FaRegHeart className='md:text-[12px] xl:text-[18px]  mb-[3px]'/>
            </div>
 
-           <Link href="/CartPage">
+           {/* <Link href="/CartPage">
            <FiShoppingCart className="md:text-[12px] xl:text-[18px] mb-[3px] cursor-pointer" />
-            </Link>
+            </Link> */}
            
+            <div className="relative">
+                <Link href="/Shop" className="relative inline-block">
+                <FiShoppingCart className="md:text-[12px] xl:text-[18px] mb-[3px] cursor-pointer" />
+                    <span className="absolute top-[-8px] right-[-12px] bg-[#f54545] text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
+                        {cartItems?.length || 0}
+                    </span>
+                </Link>
+            </div>
         
           </div>
 

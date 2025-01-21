@@ -4,8 +4,7 @@ import "./globals.css";
 import Navbar from "@/app/Components/Navbar";
 import Header from "@/app/Components/Header";
 import Footer from "@/app/Components/Footer";
-import { CartProvider } from 'use-shopping-cart';
-
+import ClientLayout from "./Shop/Redux/Provider"
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,20 +30,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}> 
-<CartProvider
-  mode="payment" // Or "subscription" if you’re using subscriptions
-  cartMode="client-only"
-  stripe="your-stripe-public-key" // Replace with your actual Stripe public key
-  currency="USD"
-  successUrl="https://your-success-url.com" // Replace with your success page URL
-  cancelUrl="https://your-cancel-url.com"   // Replace with your cancel page URL
-  shouldPersist={true} // Optional: Keeps the cart data persistent across sessions
->
-        <Navbar/>
+        <ClientLayout>
+       <Navbar/>
         <Header/>
         {children}
         <Footer/>
-        </CartProvider>
+        </ClientLayout>
       </body>
     </html>
   );
